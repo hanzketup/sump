@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+
+    <!-- Meta -->
+    <title>  </title>
+    <link rel="icon" type="image/x-icon" href="assets/img/icon.png">
+
+    <meta name="description" content="">
+    <!-- Theme color for chrome mobile -->
+    <meta name="theme-color" content="#">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!-- External -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Local -->
+
+    <link href="src/css/global.css" rel="stylesheet" type="text/css">
+    <script src="../sump.js"></script>
+
+  </head>
+  <body>
+
+
+    <div class="selector inter-selector">
+    <div class="filter inter-filter list-item">
+      <p style="flex-basis:4%;"><input type="checkbox"></input></p>
+      <p style="flex-basis:80%;"><span>Name</span><input id="usr" type="text" placeholder="All"></p>
+      <p style="flex-basis:16%;"><span>Phone</span><input id="phone" type="text" placeholder="All"></p>
+    </div>
+    <div class="list">
+
+      <div class="list-item inter-selector-item" data-name="Hasse" data-phone="534056456" >
+        <p style="flex-basis:4%;"><input type="checkbox" unchecked class="inter-selector-check"></input></p>
+        <p style="flex-basis:80%;">Hasse</p>
+        <p style="flex-basis:16%;">534056456</p>
+      </div>
+
+    </div>
+
+
+    <script>
+      sump.addFilter([
+        {
+          name: 'username',
+          id: 'usr',
+          match: /\w+$/
+        }
+      ])
+
+      sump.onFilterChange(function() {
+        console.log('Filter changed')
+      })
+
+    </script>
+  </body>
+</html>
