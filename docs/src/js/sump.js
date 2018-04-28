@@ -336,21 +336,23 @@ var sump = (function(){
   // Return a list of targets present in the DOM
   let getMatchedDOMTargets = (onlychecked) => {
     return targetStore.reduce((res, target) => {
-      target.matched
-      ? res.push(target)
-      : 0
+      if(target.matched){
+        if(onlychecked){
+          target.checked
+          ? res.push(target)
+          : null
+        }
+        else{
+          res.push(target)
+        }
+      }
       return res
-    }, [])
+    })
   }
 
   // Return a list of matched external targets
   let getMatchedExtTargets = () => {
-    return targetStore.reduce((res, target) => {
-      target.matched && !target.inDOM
-      ? res.push(target)
-      : 0
-      return res
-    }, [])
+    return targetStore.filter(target => target.matched && !target.inDOM)
   }
 
   // Public api
@@ -360,7 +362,7 @@ var sump = (function(){
     getAllFilters: filterStore,
     indexTargets: indexTargets,
     getAllTargets: targetStore,
-    getMatchedTargets: getMatchedDOMTargets,
+    getMatchedDOMTargets: getMatchedDOMTargets,
     getMatchedExtTargets: getMatchedExtTargets,
     loadExternal: loadExternal,
     onFilterChange: f => (onFilterChange = f),
