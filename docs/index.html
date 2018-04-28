@@ -3,10 +3,9 @@
   <head>
 
     <!-- Meta -->
-    <title>  </title>
-    <link rel="icon" type="image/x-icon" href="assets/img/icon.png">
-
+    <title> Sump Filtering </title>
     <meta name="description" content="">
+
     <!-- Theme color for chrome mobile -->
     <meta name="theme-color" content="#">
 
@@ -14,13 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <!-- External -->
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
     <!-- Local -->
-
     <link href="src/css/global.css" rel="stylesheet" type="text/css">
-    <script src="../sump.js"></script>
+    <script src="src/js/sump.js"></script>
 
   </head>
   <body>
@@ -28,34 +25,69 @@
 
     <div class="selector inter-selector">
     <div class="filter inter-filter list-item">
-      <p style="flex-basis:4%;"><input type="checkbox"></input></p>
-      <p style="flex-basis:80%;"><span>Name</span><input id="usr" type="text" placeholder="All"></p>
-      <p style="flex-basis:16%;"><span>Phone</span><input id="phone" type="text" placeholder="All"></p>
+      <p style="flex-basis:4%;"><input id="all" type="checkbox"></input></p>
+      <p style="flex-basis:64%;"><span>Name</span><input id="usr" type="text" placeholder="All"></p>
+      <p style="flex-basis:16%;"><span>Phone</span><input id="phn" type="text" placeholder="All"></p>
+      <p style="flex-basis:16%;"><span>Enrolled</span><input id="enrl" type="text" placeholder="All"></p>
     </div>
-    <div class="list">
+    <div class="list" id="list">
+      <!-- Generated list items will appear here -->
+    </div>
 
-      <div class="list-item inter-selector-item" data-name="Hasse" data-phone="534056456" >
+    <!-- Generate test data -->
+    <script id="template" type="text/x-handlebars-template">
+      <div class="list-item target">
         <p style="flex-basis:4%;"><input type="checkbox" unchecked class="inter-selector-check"></input></p>
-        <p style="flex-basis:80%;">Hasse</p>
-        <p style="flex-basis:16%;">534056456</p>
+        <p style="flex-basis:64%;" data-username="{{username}}">{{username}}</p>
+        <p style="flex-basis:16%;" data-phone="{{phone}}">{{phone}}</p>
+        <p style="flex-basis:16%;" data-enrolled="{{enrolled}}">{{enrolled}}</p>
       </div>
+    </script>
+    <script src="src/js/data.js"></script>
+    <script src="src/js/generate.js"></script>
 
-    </div>
-
-
+    <!-- Initialize sump -->
     <script>
-      sump.addFilter([
-        {
-          name: 'username',
-          id: 'usr',
-          match: /\w+$/
-        }
-      ])
 
-      sump.onFilterChange(function() {
-        console.log('Filter changed')
+      sump.init({
+        includeChildren:true,
+        useCheckboxes: true,
+        lazy:false,
+        silent:false,
+        filters: [
+          {
+            selector: 'phone',
+            id: 'phn',
+            match: '^{}+'
+          },
+          {
+            selector: 'username',
+            id: 'usr',
+            match: '^{}+'
+          },
+          {
+            selector: 'enrolled',
+            id: 'enrl',
+            match: '^{}+'
+          }
+        ]
       })
 
+      sump.onFilterChange = () => {
+        console.log(sump.getMatchedTargets())
+      }
+
+      /*
+      sump.target_enable = el => {
+        el.style.background = "#55efc4"
+      }
+
+      sump.target_disable = el => {
+        el.style.background = "#ff7675"
+      }
+      */
+
     </script>
+
   </body>
 </html>
