@@ -23,11 +23,13 @@
   </head>
   <body>
 
+    <h1>Sump filter test</h1>
+    <p>Replace 'All' with your query in the list header</p>
 
-    <div class="selector inter-selector">
-    <div class="filter inter-filter list-item">
-      <p style="flex-basis:4%;"><input id="all" type="checkbox"></input></p>
-      <p style="flex-basis:64%;"><span>Name</span><input id="usr" type="text" placeholder="All"></p>
+    <div class="selector">
+    <div class="filter list-item">
+      <p style="flex-basis:8%;"><input id="all" type="checkbox"></input></p>
+      <p style="flex-basis:60%;"><span>Name</span><input id="usr" type="text" placeholder="All"></p>
       <p style="flex-basis:16%;"><span>Phone</span><input id="phn" type="text" placeholder="All"></p>
       <p style="flex-basis:16%;"><span>Enrolled</span><input id="enrl" type="text" placeholder="All"></p>
     </div>
@@ -38,8 +40,8 @@
     <!-- Generate test data -->
     <script id="template" type="text/x-handlebars-template">
       <div class="list-item target">
-        <p style="flex-basis:4%;"><input type="checkbox" unchecked class="inter-selector-check"></input></p>
-        <p style="flex-basis:64%;" data-username="{{username}}">{{username}}</p>
+        <p style="flex-basis:8%;"><input type="checkbox" unchecked class="inter-selector-check"></input></p>
+        <p style="flex-basis:60%;" data-username="{{username}}">{{username}}</p>
         <p style="flex-basis:16%;" data-phone="{{phone}}">{{phone}}</p>
         <p style="flex-basis:16%;" data-enrolled="{{enrolled}}">{{enrolled}}</p>
       </div>
