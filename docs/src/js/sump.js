@@ -10,7 +10,7 @@ var sump = (function(){
       useCheckboxes: false,
       caseSensative: false,
       useButton: '',
-      includeChildren: false
+      includeChildren: true
     }
 
   // Default functions
@@ -64,6 +64,7 @@ var sump = (function(){
 
   // Index target elements by targetclass
   let indexTargets = () => {
+    targetStore = [] // Reset targetStore before indexing
     let DOMtargets = [...document.getElementsByClassName(options.targetClass)]
     DOMtargets.forEach(DOMtarget => {
       addTarget(DOMtarget)
@@ -362,11 +363,11 @@ var sump = (function(){
     getMatchedTargets: getMatchedDOMTargets,
     getMatchedExtTargets: getMatchedExtTargets,
     loadExternal: loadExternal,
-    set onFilterChange(func){onFilterChange = func},
-    set onCheckboxChange(func){onCheckboxChange = func},
-    set onTargetUpdate(func){onTargetUpdate = func},
-    set target_enable(val){target_enable = val},
-    set target_disable(val){target_disable = val},
+    onFilterChange = f => onFilterChange = f,
+    onCheckboxChange = f => onCheckboxChange = f,
+    onTargetUpdate = f => onTargetUpdate = f,
+    targetEnable = f => target_enable = f,
+    targetDisable = f => target_disable = f,
   }
 
  })();
