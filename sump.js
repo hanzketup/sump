@@ -296,14 +296,14 @@ var sump = (function(){
 
 
   /*
-  Layz creates a delay to prevent unnecessary updates
+  lazy creates a delay to prevent unnecessary updates
   saving resources when working with large sets
   of data and hindering ugly flashing
   */
-  let layzTimer
+  let lazyTimer
   let lazyHandler = () => {
-    clearTimeout(layzTimer)
-    layzTimer = setTimeout(() => {
+    clearTimeout(lazyTimer)
+    lazyTimer = setTimeout(() => {
       updateTargets()
     }, 600);
   }
