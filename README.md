@@ -187,3 +187,4 @@ Get matched non-DOM targets.
 ## To-Do:
 
 - Allow for multiple instances on the same page
+- Test lazy loading functionality & write fetch example
