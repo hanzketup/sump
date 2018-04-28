@@ -363,11 +363,11 @@ var sump = (function(){
     getMatchedTargets: getMatchedDOMTargets,
     getMatchedExtTargets: getMatchedExtTargets,
     loadExternal: loadExternal,
-    onFilterChange = f => onFilterChange = f,
-    onCheckboxChange = f => onCheckboxChange = f,
-    onTargetUpdate = f => onTargetUpdate = f,
-    targetEnable = f => target_enable = f,
-    targetDisable = f => target_disable = f,
+    onFilterChange: f => (onFilterChange = f),
+    onCheckboxChange: f => (onCheckboxChange = f),
+    onTargetUpdate: f => (onTargetUpdate = f),
+    targetEnable: f => (targetEnable = f),
+    targetDisable: f => (targetDisable = f),
   }
 
  })();

@@ -1,7 +1,7 @@
 # Sump - Foolproof filtering
 The goal of this project is to make filtering of large datasets a bit more approachable.
 
----
+### [Check out the Demo!](https://hanzketup.github.io/sump/)
 
 ## Examples
 
@@ -62,7 +62,6 @@ Actually rendering of the targets is all up to you. If you are loading in target
 ```javascript
   sump.indexTargets()
 ```
----
 
 ## Options
 
@@ -114,7 +113,6 @@ Use a button to update targets instead of default/lazy loading.
 
 Include children when looking for props in dataset.
 
----
 
 ## Functions
 
@@ -146,7 +144,6 @@ Rewrite the function called when an item is disabled.
 
 add non-dom targets to targetstore, for lazyloading.
 
----
 
 ## Callbacks
 
@@ -165,7 +162,6 @@ Pass a function to be called when a checkbox changes state.
 
 Pass a function to be called when targets are updated.
 
----
 
 ## Getters
 
