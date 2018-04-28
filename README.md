@@ -1,6 +1,5 @@
 # Sump - Foolproof filtering
-The goal of this project is to make filtering of large datasets a bit more approachable.
-
+The goal of this project is to make data selection fast and beautiful by getting rid convoluted search panels and replacing it with an intuitive, foolproof solution.
 ### [Check out the Demo!](https://hanzketup.github.io/sump/)
 
 ## Examples
@@ -184,3 +183,7 @@ Get only DOM targets that matches the filters.
 - Type: `function`
 
 Get matched non-DOM targets.
+
+## To-Do:
+
+- Allow for multiple instances on the same page
