@@ -156,7 +156,7 @@ Pass a function to be called when something is typed in a filter input.
 
 Pass a function to be called when a checkbox changes state.
 
-### onTargetUpdate()
+### onTargetUpdated()
 - Type: `Function`
 
 Pass a function to be called when targets are updated.
@@ -174,12 +174,12 @@ Get an object with all filters.
 
 Get a list of all targets.
 
-### getMatchedTargets
+### getMatchedDOMTargets()
 - Type: `function`
 
 Get only DOM targets that matches the filters.
 
-### getMatchedExtTargets
+### getMatchedExtTargets()
 - Type: `function`
 
 Get matched non-DOM targets.

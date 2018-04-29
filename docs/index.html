@@ -76,19 +76,7 @@
         ]
       })
 
-      sump.onFilterChange = () => {
-        console.log(sump.getMatchedTargets())
-      }
-
-      /*
-      sump.target_enable = el => {
-        el.style.background = "#55efc4"
-      }
-
-      sump.target_disable = el => {
-        el.style.background = "#ff7675"
-      }
-      */
+      sump.onFilterChange(() => console.log(sump.getMatchedDOMTargets()))
 
     </script>
 

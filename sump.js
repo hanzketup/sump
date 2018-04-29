@@ -347,7 +347,7 @@ var sump = (function(){
         }
       }
       return res
-    })
+    }, [])
   }
 
   // Return a list of matched external targets
@@ -367,7 +367,7 @@ var sump = (function(){
     loadExternal: loadExternal,
     onFilterChange: f => (onFilterChange = f),
     onCheckboxChange: f => (onCheckboxChange = f),
-    onTargetUpdate: f => (onTargetUpdate = f),
+    onTargetUpdated: f => (onTargetUpdate = f),
     targetEnable: f => (targetEnable = f),
     targetDisable: f => (targetDisable = f),
   }
